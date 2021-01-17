@@ -31,12 +31,7 @@ kubectl run -it \
   workload-identity-test
 ```
 
-Once the pod is created test if you can see 
+Once the pod is created it should have acces to the bucket created
 ```shell
-kubectl run -it \
-  --image google/cloud-sdk \
-  --serviceaccount gke-sa \
-  --namespace demo \
-  workload-identity-test
+gsutil ls gs://bender-tf-uat-backend
 ```
-
