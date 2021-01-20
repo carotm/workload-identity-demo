@@ -25,7 +25,7 @@ $ gcloud container clusters get-credentials demo-workload-identity --zone=us-eas
 Create a demo pod
 ```shell
 kubectl run -it \
-  --image google/cloud-sdk \
+  --image google/cloud-sdk:slim \
   --serviceaccount gke-sa \
   --namespace demo \
   workload-identity-test
@@ -33,5 +33,5 @@ kubectl run -it \
 
 Once the pod is created it should have acces to the bucket created
 ```shell
-gsutil ls gs://bender-tf-uat-backend
+gsutil ls gs://emerald-metrics-274919-a
 ```
